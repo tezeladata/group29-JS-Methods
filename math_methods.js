@@ -1,5 +1,3 @@
-// random
-
 // abs - absolute value - რიცხვის მოდული
 // abs მეთოდი არის იგივე რაც რიცხვის მოდული.
 // თუ რიცხვი 0-ის ტოლია, მეთოდი ისევ 0-ს გვიბრუნებს
@@ -107,3 +105,23 @@ console.log(Math.trunc(3)) // 3
 console.log(Math.trunc(10.9)) // 10
 console.log(Math.trunc(-2.7)) // -2
 console.log(Math.trunc(-9.9)) // -9
+
+
+// random
+// ესეც არის Math ობიექტის მეთოდი, რომელიც 0-დან 1-მდე გვიბრუნებს random რიცხვს
+// დაბრუნებული რიცხვი შეიძლება იყოს 0-ის ტოლი, მაგრამ დაბრუნებული რიცხვი 1-ის ტოლი ვერასდროს გახდება
+// დაბრუნებული რიცხვი არის ათწილადი
+
+// ფუნქცია, რომელიც 0-დან ჩვენთვის სასურველ რიცხვამდე დაგვიბრუნებს random რიცხვს
+const getRandom = limit => {
+    return Math.floor(Math.random() * limit)
+    // 0-დან limit-მდე ნებისმიერ მთელ რიცხვს მივიღებთ.
+};
+
+// ფუნქცია, რომელსაც გადაეცემა მასივი და ამ მასივიდან random ელემენტს გვიბრუნებს
+const getRandom2 = arr => {
+    const randomIndex = Math.floor(Math.random() * arr.length);
+    return arr[randomIndex]
+}
+console.log(getRandom2(["blue", "black", "green", "blue", "green"]))
+console.log(getRandom2([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
